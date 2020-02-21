@@ -1,6 +1,6 @@
 package repository
 
-import "github.com/maestre3d/bank-account/application/domain/model"
+import "github.com/maestre3d/bank-account/internal/application/domain/model"
 
 type IUserRepository interface {
 	Save(model *model.User) error

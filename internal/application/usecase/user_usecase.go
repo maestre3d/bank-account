@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"github.com/maestre3d/bank-account/application/domain/model"
-	"github.com/maestre3d/bank-account/application/domain/repository"
+	"github.com/maestre3d/bank-account/internal/application/domain/model"
+	"github.com/maestre3d/bank-account/internal/application/domain/repository"
 )
 
 type UserUseCase struct {

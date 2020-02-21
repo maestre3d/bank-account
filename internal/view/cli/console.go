@@ -5,16 +5,23 @@ import (
 	"fmt"
 	helper "github.com/maestre3d/bank-account/internal/view/cli/helper"
 	presenter "github.com/maestre3d/bank-account/internal/view/cli/presenter"
+	"github.com/maestre3d/bank-account/tools"
 	"log"
 	"os"
 )
 
 var (
 	userPresenter *presenter.UserPresenter
+	container *tools.Container
 )
 
 func Start() {
-	userPresenter = presenter.NewUserPresenter()
+	container, err := tools.NewContainer()
+	if err != nil {
+		log.Fatalf("Error: %v", err)
+	}
+	userPresenter = container.Resolve("user.presenter").(*presenter.UserPresenter)
+
 	showMainMenu()
 }
 
